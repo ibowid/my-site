@@ -1,0 +1,34 @@
+{{ define "main" }}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ .Title }}</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden; /* hide outer page scroll */
+    }
+    .iframe-container {
+      width: 100%;
+      min-height: 100vh; /* at least viewport height */
+      height: 100vh; /* makes iframe fill screen */
+      overflow: auto; /* allow scrolling if content is taller */
+    }
+    .iframe-container iframe {
+      width: 100%;
+      min-height: 100%;
+      border: none;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="iframe-container">
+    <iframe src="https://suchandsuch.bearblog.dev/" scrolling="yes"></iframe>
+  </div>
+</body>
+</html>
+{{ end }}
